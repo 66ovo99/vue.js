@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <style>
+      body {
+        background-color: rgb(148, 199, 244);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .process {
+        max-width: 1000px;
+        width: 100%;
+        padding: 20px;
+        text-align: left; 
+      }
+
+      .process p {
+        margin: 20px 0; 
+        line-height: 1.8; 
+        padding: 0 20px; 
+      }
+
+      .process img {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .code-block {
+        background-color: #000000; 
+        color: #ffffff; 
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px 0;
+        font-family: Consolas, monospace;
+        line-height: 1.5;
+        overflow-x: auto;
+      }
+    </style>
+</head>
+<body>
+  <div class="process">
+    <h1>Tutorial</h1>
+
+    <p>In fact, when using the Vue.js framework, many editors are available, each with its own advantages. My top recommendation is Visual Studio Code, one of the most popular code editors today, which supports a wide range of extensions, such as Vue.js extensions, debugging, formatting, and more.</p>
+
+    <p>Next is Sublime Text, a lightweight editor that supports Vue.js syntax highlighting and extensions, making it suitable for quick code editing. Another option is Atom, an open-source editor developed by GitHub that also supports Vue.js plugins and some custom features. There are many other editors, but I won’t list them all here.</p>
+
+    <p>To start writing Vue.js applications in VSCode, you’ll need to install Node.js, as Vue.js relies on this environment. You can download and install it from the official Node.js website (https://nodejs.org/en).</p>
+
+    <img src="pictures/31.png" alt="31" width="1000" height="600">
+
+    <p>After installation, open PowerShell or Command Prompt and enter the following command to check if Node.js has been installed correctly:</p>
+
+    <div class="code-block">node -v</div>
+
+    <p>If the version information is displayed, the installation was successful. If the command is not recognized or Node cannot be found, it means Node.js was not installed correctly, or the path was not added to the system environment variables.</p>
+
+    <p>To check if it’s been added to the system environment variables, go to your desktop, select "This PC," right-click, and choose "Properties." Select "Advanced system settings," then "Environment Variables." In the "System Variables" section, locate "Path," select it, and either double-click or click "Edit." Then click "Browse." If installed on the C drive, the default location is `C:\Program Files\nodejs\`. If it’s elsewhere, you can manually find and paste the directory path. After that, click "OK" all the way through to save.</p>
+
+    <p>Once everything is set, restart your computer to apply the changes. After restarting, open PowerShell again and run:</p>
+
+    <div class="code-block">npm -v</div>
+
+    <p>If the version information is displayed, the setup is complete. If not, you may need to uninstall and reinstall Node.js.</p>
+
+    <img src="pictures/42.jpg" alt="42" style="zoom:33%;">
+
+    <img src="pictures/32.png" alt="32" width="1000" height="600">
+    <img src="pictures/33.png" alt="33" width="600" height="600">
+    <img src="pictures/34.png" alt="34" width="700" height="600">
+    <img src="pictures/35.png" alt="35" width="800" height="600">
+    <img src="pictures/36.png" alt="36" width="800" height="600">
+
+    <p>After setting up, you can use the Vue CLI to quickly generate a Vue.js template. Start by creating a new folder—I'll name it `my-vue-project`—and open this folder in VSCode. Open a new terminal and enter the following command to install Vue CLI globally:</p>
+
+    <div class="code-block">npm install -g @vue/cli</div>
+
+    <p>Next, create a new Vue.js project by typing:</p>
+
+    <div class="code-block">vue create vue-js</div>
+
+    <p>Here, I chose `vue-js` as the project name. If you encounter a message in the terminal stating that the system prohibits script execution, run PowerShell as an administrator and enter the following command to check the current execution policy:</p>
+
+    <div class="code-block">Get-ExecutionPolicy</div>
+
+    <p>If it displays `Restricted` or `RemoteSigned`, it means PowerShell doesn’t allow scripts to run by default. In this case, enter the following command:</p>
+
+    <div class="code-block">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</div>
+
+    <p>This command allows PowerShell to run local scripts while requiring signatures for remote scripts, enhancing system security. After that, you can rerun the command:</p>
+
+    <div class="code-block">vue create vue-js</div>
+
+    <p>This step defaults to Vue 3. If you have projects in older versions and want to continue with them, you can select the version accordingly. For this guide, we’ll proceed with the latest Vue 3.</p>
+
+    <img src="pictures/37.png" alt="37" width="800" height="400">
+    <img src="pictures/38.png" alt="38" width="1000" height="600">
+    <img src="pictures/39.png" alt="39" width="1000" height="600">
+
+    <p>The system will then guide you on how to run the project by executing a series of commands in the terminal.</p>
+
+    <p>Hold down **CTRL** and click the **Local** link provided in the terminal output to open and view the initial project page in your browser.</p>
+
+    <img src="pictures/40.png" alt="40" width="1000" height="600">
+
+    <p>This is the default project running page. Next, let’s look at how to set up and run our group project, "Calculator," and explore its project structure.</p>
+
+    <img src="pictures/41.png" alt="41" width="400" height="600">
+
+    <p>The next is the content of index.html.</p>
+
+    <div class="code-block">
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Calculator&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./assets/styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="app"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <p>***The next is the content of calculator.js in the `assets` folder.***</p>
+
+    <div class="code-block">
+      <pre><code>export const calculatorMethods = {
+  appendNumber(number) {
+    if (this.result === '0') {
+      this.result = number;
+    } else {
+      this.result += number;
+    }
+  },
+
+  chooseOperator(operator) {
+    if (this.result !== '') {
+      this.firstValue = this.result;
+      this.operator = operator;
+      this.result = '';
+    }
+  },
+
+  calculate() {
+    if (this.firstValue !== null && this.operator !== null && this.result !== '') {
+      this.secondValue = this.result;
+      const num1 = parseFloat(this.firstValue);
+      const num2 = parseFloat(this.secondValue);
+      switch (this.operator) {
+        case '+':
+          this.result = (num1 + num2).toString();
+          break;
+        case '-':
+          this.result = (num1 - num2).toString();
+          break;
+        case '*':
+          this.result = (num1 * num2).toString();
+          break;
+        case '/':
+          if (num2 !== 0) {
+            this.result = (num1 / num2).toString();
+          } else {
+            this.result = 'Error';
+          }
+          break;
+      }
+      this.firstValue = null;
+      this.operator = null;
+      this.secondValue = null;
+    }
+  },
+
+  clear() {
+    this.result = '0';
+    this.firstValue = null;
+    this.operator = null;
+    this.secondValue = null;
+  }
+};</code></pre>
+    </div>
+
+    <p>***This is the App.vue file.***</p>
+
+    <div class="code-block">
+      <pre><code>&lt;template&gt;
+  &lt;div id="app" class="calculator"&gt;
+    &lt;h1&gt;Calculator&lt;/h1&gt;
+    &lt;input type="text" v-model="result" readonly /&gt;
+
+    &lt;div&gt;
+      &lt;button @click="appendNumber('7')"&gt;7&lt;/button&gt;
+      &lt;button @click="appendNumber('8')"&gt;8&lt;/button&gt;
+      &lt;button @click="appendNumber('9')"&gt;9&lt;/button&gt;
+      &lt;button @click="chooseOperator('/')"&gt;÷&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button @click="appendNumber('4')"&gt;4&lt;/button&gt;
+      &lt;button @click="appendNumber('5')"&gt;5&lt;/button&gt;
+      &lt;button @click="appendNumber('6')"&gt;6&lt;/button&gt;
+      &lt;button @click="chooseOperator('*')"&gt;×&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button @click="appendNumber('1')"&gt;1&lt;/button&gt;
+      &lt;button @click="appendNumber('2')"&gt;2&lt;/button&gt;
+      &lt;button @click="appendNumber('3')"&gt;3&lt;/button&gt;
+      &lt;button @click="chooseOperator('-')"&gt;-&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;button @click="appendNumber('0')"&gt;0&lt;/button&gt;
+      &lt;button @click="clear"&gt;C&lt;/button&gt;
+      &lt;button @click="calculate"&gt;=&lt;/button&gt;
+      &lt;button @click="chooseOperator('+')"&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { calculatorMethods } from './assets/calculator.js';
+export default {
+  data() {
+    return {
+      result: '0',
+      operator: null,
+      firstValue: null,
+      secondValue: null
+    };
+  },
+  methods: calculatorMethods
+};
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+/* 样式部分已经放入 styles.css  This part has taken into the styles.css*/
+&lt;/style&gt;</code></pre>
+    </div>
+
+    <p>***Finally, here is the main.js file.***</p>
+
+    <div class="code-block">
+      <pre><code>import { createApp } from 'vue';
+                import App from './App.vue';
+                const app = createApp(App);
+                app.mount('#app');</code></pre>
+    </div>
+
+    <p>***The resulting output is shown in the video below.***</p>
+
+    <video src="pictures/work.mp4" width="1000" height="600"></video>
+
+    <p>Maybe in the GitHub can not support to take video, You can right-click and select to play on a new page.</br>
+      That's the complete tutorial on Vue.js. If you want to dive deeper into learning Vue.js, you can explore related resources on GitHub for further study.</p>
+  </div>
+</body>
+</html>
